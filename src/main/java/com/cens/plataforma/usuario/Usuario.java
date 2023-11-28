@@ -5,13 +5,49 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity(name = "Usuario")
+@Table(name = "usuario")
 public class Usuario implements UserDetails {
+    @Id
+    @Column(
+        name = "idUser",
+        updatable = false
+    )
     private Long id;
+    
+    @Column(
+        name = "nomUser"
+    )
     private String nombre;
+    
+    @Column(
+        name = "apellP"
+    )
     private String apellidoP;
+    
+    @Column(
+        name = "apellM"
+    )
     private String apellidoM;
+    
+    @Column(
+        name = "emailUser"
+    )
     private String email;
+    
+    @Column(
+        name = "passUser"
+    )
     private String password;
+    
+    @Column(
+        name = "id_Rol"
+    )
     private Integer idRol;
     
     public Usuario(Long id, String nombre, String apellidoP, String apellidoM, String email, String password,

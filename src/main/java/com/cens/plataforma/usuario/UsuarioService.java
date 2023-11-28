@@ -2,6 +2,7 @@ package com.cens.plataforma.usuario;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -12,6 +13,7 @@ public class UsuarioService implements UserDetailsService{
 	private final AppUserRepository appUserRepository;
 	private final static String USUARIO_NO_ENCONTRADO ="Usuario con el email %s no fue encontrado";
 
+	@Autowired
     public UsuarioService(AppUserRepository appUserRepository) {
 		this.appUserRepository = appUserRepository;
 	}
@@ -26,17 +28,7 @@ public class UsuarioService implements UserDetailsService{
 
 
 	public List<Usuario> getUsuarios(){
-		return List.of(
-			new Usuario(
-				1L,
-				"tio",
-				"nacho",
-				"reparacion de cabello",
-				"nachosacowea@gmail.com",
-				"nachoperkin69",
-				1
-			)
-		);
+		return appUserRepository.findAll();
 	}
 	
 	
