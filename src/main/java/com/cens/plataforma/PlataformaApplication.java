@@ -8,7 +8,7 @@ public class PlataformaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PlataformaApplication.class, args);
-		System.out.println("Holap uwu");
+		System.out.println("Holap uwo feo y chico ");
 	}
 
 }
