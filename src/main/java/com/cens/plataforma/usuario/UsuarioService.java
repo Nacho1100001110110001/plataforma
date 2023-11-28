@@ -10,11 +10,11 @@ public class UsuarioService {
 		return List.of(
 			new Usuario(
 				1L,
-				"Uwo",
-				"Herrera",
-				"De los Montes",
-				"uwo.qlfeo@gmail.com",
-				"uwo123",
+				"tio",
+				"nacho",
+				"reparacion de cabello",
+				"nachosacowea@gmail.com",
+				"nachoperkin69",
 				1
 			)
 		);
